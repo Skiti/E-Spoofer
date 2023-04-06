@@ -1,0 +1,8 @@
+f = open("BLE122.bin","rb")
+lines = f.read()
+text = lines.replace(b'\x5a\x2f', b'\x55\x2f')
+f.close()
+f2 = open("BLE122-patched.bin","w+b")
+print(text)
+f2.write(text)
+f2.close()

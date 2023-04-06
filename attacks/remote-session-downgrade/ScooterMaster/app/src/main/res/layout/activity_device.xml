@@ -1,0 +1,272 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context="u.scooters.attack.main.DeviceActivity">
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="disconnected"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/life"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/middle"
+        app:layout_constraintTop_toTopOf="@id/topLine" />
+
+    <u.scooters.attack.main.SpecialTextView
+        android:id="@+id/life"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100 %"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/middle"
+        app:layout_constraintTop_toBottomOf="@+id/time" />
+
+
+    <Button
+        android:id="@+id/start_handler_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="startHandler"
+        android:text="Start Handler"
+        app:layout_constraintEnd_toStartOf="@+id/middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/topLine" />
+
+
+    <u.scooters.attack.main.SpecialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/voltageMeter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="40.00 V"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/battTemp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speedMeter"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <u.scooters.attack.main.SpecialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/battTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="30°C"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/minPowerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/voltageMeter" />
+
+    <u.scooters.attack.main.SpecialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/remainingAmps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="7800"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/minPowerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/battTemp"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.0"/>
+
+
+    <u.scooters.attack.main.SpecialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/distanceMeter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="50.11 km"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@id/remainingAmps"
+        app:layout_constraintTop_toBottomOf="@+id/motorTemp" />
+
+    <u.scooters.attack.main.SpecialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/motorTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:text="30°C"
+        android:textSize="25sp"
+        app:layout_constraintRight_toLeftOf="@id/middle"
+        app:layout_constraintStart_toStartOf="@id/battTemp"
+        app:layout_constraintTop_toBottomOf="@+id/ampMeter" />
+
+    <u.scooters.attack.main.SpecialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ampMeter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="10.00 A"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/middle"
+        app:layout_constraintStart_toEndOf="@+id/voltageMeter"
+        app:layout_constraintTop_toBottomOf="@+id/speedMeter" />
+
+
+    <u.scooters.attack.main.SpecialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/efficiencyMeter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Curr. Efficiency"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@id/middle"
+        app:layout_constraintTop_toBottomOf="@+id/speedMeter" />
+
+    <u.scooters.attack.main.SpecialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/AverageEfficiencyMeter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Avg. Efficiency"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@id/middle"
+        app:layout_constraintTop_toBottomOf="@+id/efficiencyMeter"/>
+
+    <u.scooters.attack.main.SpecialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rangeMeter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rem. Range"
+        android:layout_marginStart="4dp"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/middle"
+        app:layout_constraintTop_toBottomOf="@+id/AverageEfficiencyMeter" />
+
+    <u.scooters.attack.main.SpecialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/averageSpeedMeter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Average Speed"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/middle"
+        app:layout_constraintTop_toBottomOf="@+id/rangeMeter" />
+
+
+    <TextView
+        android:id="@+id/minPowerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="min Power: -100W"
+        android:layout_marginStart="4dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/maxPowerView"
+        app:layout_constraintEnd_toStartOf="@+id/middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/remainingAmps" />
+
+    <TextView
+        android:id="@+id/maxPowerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="max Power: 500 W"
+        android:textSize="20sp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minPowerView" />
+
+    <TextView
+        android:id="@+id/recoveredPower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="recovered: 10 ah"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/middle"
+        app:layout_constraintTop_toBottomOf="@+id/spentPower" />
+
+    <TextView
+        android:id="@+id/spentPower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="spent: 10 Ah"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/recoveredPower"
+        app:layout_constraintStart_toStartOf="@+id/middle"
+        app:layout_constraintTop_toBottomOf="@+id/averageSpeedMeter" />
+
+
+    <TextView
+        android:id="@+id/powerMeter"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Power"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/speedMeter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/below_handler"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <u.scooters.attack.main.SpecialTextView
+        android:id="@+id/speedMeter"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Speed"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/powerMeter" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="190dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="3dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/below_handler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="50dp" />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="87dp"
+        android:text="MiHome password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recoveredPower" />
+
+    <Button
+        android:id="@+id/lock_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Launch Total Lock Attack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

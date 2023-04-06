@@ -1,0 +1,57 @@
+name: Node.js package
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, ubuntu-latest, macos-latest]
+        node: [8, 10, 12, 13, 14]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install dependencies (ubuntu-18.04)
+        # Use g++-4.8 only on 'ubuntu-18.04'
+        if: ${{ matrix.os == 'ubuntu-18.04' }}
+        run: |
+          sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+          sudo apt -qq update
+          sudo apt install -y g++-4.8
+          export CC="g++-4.8"
+      - name: Install dependencies (ubuntu-latest)
+        # Use g++-9 only on versions after 'ubuntu-18.04'
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        run: |
+          sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+          sudo apt -qq update
+          sudo apt install -y g++-9
+          export CC="g++-9"
+      - name: Install NPM packages
+        # Mac bindings will currently not build on Node 6
+        run: |
+          npm install
+      - name: Install Node 8 packages
+        if: ${{ matrix.node == 8 }}
+        run: |
+          # mocha 8+ is not compatible with Node 8
+          npm install mocha@7.2.0
+      - name: Run tests
+        # Mac bindings will currently not build on Node 6
+        run: |
+          npm test
+      - name: Lint
+        # ESLint 6+ is not compatible with Node 6
+        # ESLint 7+ is not compatible with Node 8
+        if: ${{ matrix.node > 8 }}
+        run: |
+          npm run lint

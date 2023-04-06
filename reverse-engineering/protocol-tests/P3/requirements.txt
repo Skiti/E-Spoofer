@@ -1,0 +1,2 @@
+cryptography==39.0.2
+pyshark==0.5.3

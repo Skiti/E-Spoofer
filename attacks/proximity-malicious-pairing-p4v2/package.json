@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@abandonware/noble": "^1.9.2-15",
+    "elliptic": "^6.5.4",
+    "hkdf": "^0.0.2",
+    "node-crc16": "^2.0.7"
+  }
+}
