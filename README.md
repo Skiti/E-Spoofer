@@ -2,7 +2,7 @@
 
 ## Description and Goals of E-Spoofer Toolkit
 
-*(If you are a WiSec23 Artifact reviewer, please also refer to the mandatory [README.txt](https://github.com/Skiti/Espoofer/blob/main/README.txt) file that we included in this repository)*
+*(If you are a WiSec23 Artifact reviewer, please also refer to the [wisec-README.txt](https://github.com/Skiti/Espoofer/blob/main/wisecREADME.txt) file that we included in this repository, formatted accordingly to the template required by WiSec)*
 
 E-Spoofer is a toolkit that reverse-engineers the Xiaomi proprietary application-layer protocols spoken over BLE, and attacks Xiaomi electric scooters (M365, Pro 1, Pro 2, 1S, Essential, Mi 3) and the Mi Home app. It also offers countermeasures that fix the design and implementation flaws of Xiaomi protocols exploited by our attacks.
 The toolkit works with minimal resources: a computer that supports BLE, Python (+ libraries), NodeJS (+ libraries), an Android phone (no root required), and a Xiaomi e-scooter (among the models previously mentioned).
