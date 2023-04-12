@@ -15,5 +15,5 @@ The P2 protocol exchanges obfuscated application-layer packets. The packets are 
 
 ### Execution
 * The syntax is the following <code>python3 obfuscation-test-P2.py [packet] [mask]</code>.
-* Run the following command <code>python3 obfuscation-test-P2.py 55ab0320015015987c 762ea7a24e25c2685181bd57</code>.
-* Observe the obfuscated/deobfuscated packet, which should be <code>55ab03562ff7b700000000c9fd</code>.
+* Run the following command <code>python3 obfuscation-test-P2.py 55ab03562ff7b700000000c9fd 762ea7a24e25c2685181bd57</code>.
+* Observe the obfuscated/deobfuscated packet, which should be <code>55ab0320015015987c</code>.
