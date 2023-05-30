@@ -61,7 +61,6 @@ We share our Ghidra project that reverse-engineers a huge part of the Xiaomi BLE
 
 ### Bug Bounty
 
-We received a 200$ bug bounty reward from Xiaomi, for reporting a bug in Mi Home.
 During our reverse-engineering experiments, we identified and disclosed a severe UI authentication bug in Mi Home (both Android and iOS versions). From Mi Home v7.6.704 onwards, the user can lock or unlock a password-protected e-scooter without actually entering the password. The cause is an UI delay of password prompt.
 
 Video demonstration of the Mi Home security issue:
