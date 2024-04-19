@@ -3,7 +3,7 @@
 ## Paper Published @ WiSec23
 
 This work was published in the 16th ACM Conference on Security and Privacy in Wireless and Mobile Networks 2023 (WiSec23), Guildford, Surrey (UK), May 29 - June 01.
-You can read °E-Spoofer: Attacking and Defending Xiaomi Electric Scooter Ecosystem° at the following [link]([https://wisec2023.surrey.ac.uk/accepted-papers/#E_Spoofer__Attacking_and_Defending_Xiaomi_Electric_Scooter_Ecosystem](https://dl.acm.org/doi/10.1145/3558482.3590176)).
+You can read "E-Spoofer: Attacking and Defending Xiaomi Electric Scooter Ecosystem" at the following [link](https://dl.acm.org/doi/10.1145/3558482.3590176).
 
 ## Description and Goals of E-Spoofer Toolkit
 
